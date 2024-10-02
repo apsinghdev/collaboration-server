@@ -1,6 +1,8 @@
-FROM node:21.6.0-alpine
+FROM alpine:latest AS first
 
-WORKDIR /usr/src/collaboration-server
+RUN apk add python3 npm
+
+WORKDIR /collaboration-server
 
 COPY package*.json ./
 
@@ -10,4 +12,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["npm", "run", "server"]
+CMD ["npm", "run", "serve"]
