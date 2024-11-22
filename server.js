@@ -95,11 +95,6 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => handleDisconnect(socket));
 });
 
-// Simple test endpoint
-app.get("/test", (req, res) => {
-  res.json({ ok: true });
-});
-
 server.listen(PORT, () => {
   console.log(`Server's up and running on port ${PORT} `);
 });
